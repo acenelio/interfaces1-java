@@ -1,5 +1,7 @@
 package model.services;
 
+import java.time.Duration;
+
 import model.entities.CarRental;
 import model.entities.Invoice;
 
@@ -17,9 +19,9 @@ public class RentalService {
 	}
 	
 	public void processInvoice(CarRental carRental) {
-		long t1 = carRental.getStart().getTime();
-		long t2 = carRental.getFinish().getTime();
-		double hours = (double)(t2 - t1) / 1000 / 60 / 60;
+		
+		double minutes = Duration.between(carRental.getStart(), carRental.getFinish()).toMinutes();		
+		double hours = minutes / 60.0;
 		
 		double basicPayment;
 		if (hours <= 12.0) {

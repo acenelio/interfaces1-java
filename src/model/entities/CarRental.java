@@ -1,11 +1,11 @@
 package model.entities;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class CarRental {
 
-	private Date start;
-	private Date finish;
+	private LocalDateTime start;
+	private LocalDateTime finish;
 	
 	private Vehicle vehicle;
 	private Invoice invoice;
@@ -13,25 +13,25 @@ public class CarRental {
 	public CarRental() {
 	}
 
-	public CarRental(Date start, Date finish, Vehicle vehicle) {
+	public CarRental(LocalDateTime start, LocalDateTime finish, Vehicle vehicle) {
 		this.start = start;
 		this.finish = finish;
 		this.vehicle = vehicle;
 	}
 
-	public Date getStart() {
+	public LocalDateTime getStart() {
 		return start;
 	}
 
-	public void setStart(Date start) {
+	public void setStart(LocalDateTime start) {
 		this.start = start;
 	}
 
-	public Date getFinish() {
+	public LocalDateTime getFinish() {
 		return finish;
 	}
 
-	public void setFinish(Date finish) {
+	public void setFinish(LocalDateTime finish) {
 		this.finish = finish;
 	}
 
